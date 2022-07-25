@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <h1>{{ titulo }}</h1>
     <h3>
-      La base es : <strong>{{ numero }}</strong>
+      La base es : <strong> 5 </strong>
     </h3>
 
     <button (click)="acumular(base)">+{{ base }}</button>
