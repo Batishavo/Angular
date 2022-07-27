@@ -1,15 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { Personaje } from '../interfaces/dbz.interface';
+
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent  {
 
-  constructor() { }
+  personajes: Personaje[] = [
+    
+    {
+      nombre: 'Goku',
+      poder: 1500
+    },
+    {
+      nombre: 'Vegeta',
+      poder: 7500
+    }
 
-  ngOnInit(): void {
+  ];
+
+  nuevo: Personaje = {
+
+    nombre: '',
+    poder: 0
+
   }
+  
+ 
 
 }
