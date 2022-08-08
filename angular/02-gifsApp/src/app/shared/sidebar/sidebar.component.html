@@ -6,7 +6,8 @@
     <a href="#" class="list-group-item list-group-item-action"> Dashboard </a>
   </div>-->
   <div class="list-group list-reset"
-    *ngFor="let busquedas of hisotiral;">
+    *ngFor="let busquedas of hisotiral;"
+     (click)="buscar( busquedas );">>
       <a href="#" class="list-group-item list-group-item-action">
         {{busquedas | titlecase}} 
       </a>
