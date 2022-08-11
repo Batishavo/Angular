@@ -10,11 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     AppRoutingModule,
     PaisModule, 
-    SharedModule],
-  providers: [],
-  bootstrap: [AppComponent],
+    SharedModule
+  ],
+  bootstrap: [
+    AppComponent
+  ],
 })
 export class AppModule {}
