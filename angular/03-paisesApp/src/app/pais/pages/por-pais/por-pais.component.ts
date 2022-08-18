@@ -20,7 +20,7 @@ export class PorPaisComponent {
 
     this.hayError = false;
     this.termino = termino;
-    console.log(this.termino);
+    //console.log(this.termino);
 
     this.PaisService.buasvarPais(this.termino)
       .subscribe( (paises) =>{

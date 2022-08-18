@@ -10,15 +10,15 @@
 
     </thead>
     <tbody>
-        <tr *ngFor="let pais of paises; let i = index">
+        <tr *ngFor="let capital of capitales; let i = index">
             <td>{{i+1}}</td>
             <td>
                 <img class="small-flag" 
-                [src]="pais.flag">
+                [src]="capital.flag">
                     
             </td>
-            <td>{{ pais.capital }},{{ pais.name }}</td>
-            <td>{{pais.population | number}}</td>
+            <td>{{capital.capital}}</td>
+            <td>{{capital.population | number}}</td>
             <td>
                 <a >Ver...</a>
             </td>
