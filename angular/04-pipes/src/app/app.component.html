@@ -1,6 +1,23 @@
-<h1>{{nombre | titlecase }} </h1>
-<h1>{{valor | number}}</h1>
+<!--<div class="text-layout">
+  <h1>{{ nombre | titlecase }}</h1>
+  <h1>{{ valor | number }}</h1>
+</div>
 
-<button pButton (click)="mostrarNombre()">
-  Cambiar nombre
-</button>
+<button
+  pButton
+  (click)="mostrarNombre()"
+  label="Cambiar nombre"
+  icon="pi pi-bell"
+  iconPos="right"
+  class="p-button-help"
+></button>
+
+<hr />
+
+<p-card [header]="nombre | titlecase"
+        subheader="subheader">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus tempore dignissimos beatae similique deserunt magni ipsum commodi animi, sit itaque illo velit. Voluptate perspiciatis odio dolorem itaque temporibus accusamus quo!
+</p-card>-->
+
+<app-menu></app-menu>
+<router-outlet></router-outlet>
