@@ -6,25 +6,33 @@ import { NoComunesComponent } from './pages/no-comunes/no-comunes.component';
 import { BasicosComponent } from './pages/basicos/basicos.component';
 import { OrdenarComponent } from './pages/ordenar/ordenar.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-
-
+import {MayusculasPipe} from './pipes/mayusculas.pipe';
+import { ColorPipe } from './pipes/color.pipe';
+import { VuelaPipe } from './pipes/vuela.pipe';
+import { OrdenarPipe } from './pipes/ordenar.pipe';
 
 @NgModule({
   declarations: [
+    //componentes
     NumerosComponent,
     NoComunesComponent,
     BasicosComponent,
-    OrdenarComponent
+    OrdenarComponent,
+    //Pipes
+    MayusculasPipe,
+    ColorPipe,
+    VuelaPipe,
+    OrdenarPipe
   ],
-  exports:[
+  exports: [
     NumerosComponent,
     NoComunesComponent,
     BasicosComponent,
-    OrdenarComponent
+    OrdenarComponent,
   ],
   imports: [
-    CommonModule,
+    CommonModule, 
     PrimeNgModule
-  ]
+  ],
 })
-export class VentasModule { }
+export class VentasModule {}
