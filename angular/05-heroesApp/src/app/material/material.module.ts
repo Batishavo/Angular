@@ -11,6 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule}  from '@angular/material/input'
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   exports:[
@@ -25,6 +26,7 @@ import {MatInputModule}  from '@angular/material/input'
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
   ]
 })
 export class MaterialModule { }
