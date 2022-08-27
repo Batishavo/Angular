@@ -10,6 +10,8 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { HeroeTarjetaComponent } from './componets/heroe-tarjeta/heroe-tarjeta.component';
+import { HeroeImagenPipe } from './pipes/heroe-imagen.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,13 +22,15 @@ import { HeroeTarjetaComponent } from './componets/heroe-tarjeta/heroe-tarjeta.c
     HeroeComponent,
     HomeComponent,
     ListadoComponent,
-    HeroeTarjetaComponent
+    HeroeTarjetaComponent,
+    HeroeImagenPipe
   ],
   imports: [
     CommonModule,
     HeroesRoutingModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
   ]
 })
 export class HeroesModule { }

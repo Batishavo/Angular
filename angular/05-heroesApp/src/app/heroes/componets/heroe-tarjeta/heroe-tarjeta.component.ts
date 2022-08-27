@@ -13,6 +13,7 @@ export class HeroeTarjetaComponent implements OnInit {
   @Input() heroe!: Heroe ;
 
   constructor(private heroesService: HeroesService) {}
-
+  
   ngOnInit(): void {}
+
 }

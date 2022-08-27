@@ -33,6 +33,7 @@ const routes:Routes=[
       },
       {
         path: '**',
+        
         redirectTo: 'listado'
       }
     ]
@@ -45,6 +46,7 @@ const routes:Routes=[
   ],
   exports:[
     RouterModule
+    
   ]
 })
 export class HeroesRoutingModule { }
