@@ -9,9 +9,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { MaterialModule } from '../material/material.module';
-import { HeroeTarjetaComponent } from './componets/heroe-tarjeta/heroe-tarjeta.component';
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { HeroeImagenPipe } from './pipes/heroe-imagen.pipe';
 import { FormsModule } from '@angular/forms';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 
 
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ListadoComponent,
     HeroeTarjetaComponent,
-    HeroeImagenPipe
+    HeroeImagenPipe,
+    ConfirmarComponent
   ],
   imports: [
     CommonModule,
