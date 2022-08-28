@@ -3,8 +3,11 @@
     <mat-toolbar>
       <span>Menu</span>
       <span class="spacer"></span>
-      <button mat-icon-button 
-              (click)="sidenav.toggle()">
+
+      <button 
+        mat-icon-button 
+        (click)="sidenav.toggle()">
+        
         <mat-icon>menu</mat-icon>
         
       </button>
@@ -43,7 +46,13 @@
     </button>
     
     <span class="spacer"></span>
-    <button mat-button>
+
+  <span>{{ auth.usuario }}</span>
+
+    <button 
+      mat-button
+      (click)="logOut()"
+      >
         Logout
     </button>
   
