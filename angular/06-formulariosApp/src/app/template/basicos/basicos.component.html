@@ -16,7 +16,7 @@
             <div class="col-sm-9">
             
                 <input
-                ngModel
+                [ngModel]="initForm.producto"
                 name="producto"
                 type="text"
                 class="form-control"
@@ -38,13 +38,21 @@
           <label class="col-sm-3 col-from-label"> Precio </label>
           <div class="col-sm-9">
             <input
-              ngModel
+              [ngModel]="initForm.precio"
               name="precio"
               type="number"
               class="form-control"
               placeholder="Precio del producto"
+              required
+              min="0"
             />
-            <!--<span class="form-text text-danger">Debe de ser de 3 letras</span>-->
+            <span 
+                class="form-text text-danger"
+                *ngIf="valido('precio')"
+                >
+                
+                *Debe de ser mayor a 0;
+            </span>
           </div>
         </div>
          <!--Campo de Existencia-->
@@ -52,11 +60,14 @@
           <label class="col-sm-3 col-from-label"> Existencias </label>
           <div class="col-sm-9">
             <input
-              ngModel
+            [ngModel]="initForm.existencias"
               name="existencias"
               type="number"
               class="form-control"
+              customMin
+              [minimo]="0"
               placeholder="Existencias del producto"
+              required
             />
             <!--<span class="form-text text-danger">Debe de ser de 3 letras</span>-->
           </div>
@@ -65,6 +76,7 @@
             <div class="col">
                 <button 
                     type="submit"
+                    [disabled]="miFormulario.invalid"
                     class="btn btn-primary float-end">
                     Guardar
                 </button>
@@ -88,5 +100,8 @@
 
         <span>Valid</span>
         <pre>{{miFormulario.value | json}}</pre> 
+        
+        <span>CustomDirective</span>
+        <pre>{{miFormulario.controls['existencias'].errors | json }}</pre> 
     </div>
 </div>
