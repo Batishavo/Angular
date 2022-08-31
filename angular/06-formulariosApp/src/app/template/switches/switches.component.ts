@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SwitchesComponent implements OnInit {
 
+  persona={
+    cromosoma: '',
+    notificaciones: true,
+  }
+
+  terminoasYCondiciones: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
