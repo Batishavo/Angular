@@ -1,7 +1,10 @@
 <h2>Reactivo: Switches</h2>
 <hr />
 
-<form [formGroup]="miFormulario">
+<form 
+  [formGroup]="miFormulario"
+  (ngSubmit)=" guardar()"
+  >
   <!--Radio-->
   <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Cromosoma</label>
@@ -10,13 +13,14 @@
         <input
           class="form-check-input"
           type="radio"
-          name="radioCromosoma"
           id="radioXX"
-          checked
           value="XX"
-          required
+          formControlName="cromosoma"
         />
-        <label class="form-check-label" for="flexRadioDefault1">
+        <label 
+          class="form-check-label" 
+          for="flexRadioDefault1"
+          >
           Cromosoma XX
         </label>
       </div>
@@ -24,12 +28,14 @@
         <input
           class="form-check-input"
           type="radio"
-          name="radioCromosoma"
           id="radioXY"
           value="XY"
-          required
+          formControlName="cromosoma"
         />
-        <label class="form-check-label" for="flexRadioDefault2">
+        <label 
+          class="form-check-label" 
+          for="flexRadioDefault2"
+          >
           Cromosoma XY
         </label>
       </div>
@@ -42,11 +48,9 @@
         <div class="form-check form-switch mt-2">
             <input 
                 class="form-check-input" 
-                type="checkbox" 
-                role="switch" 
+                type="checkbox"              
                 id="flexSwitchCheckChecked" 
-                checked
-                name="notificaciones"
+                formControlName="notificaciones"
                 >
             <label 
                 class="form-check-label" 
@@ -67,8 +71,7 @@
                     type="checkbox" 
                     value="" 
                     id="flexCheckDefault"
-                    name="terminos"
-                    required
+                    formControlName="codiciones"
                     >
 
                 <label class="form-check-label" for="flexCheckDefault">
@@ -82,6 +85,7 @@
     <div class="col">
         <button 
           class="btn btn-primary float-end"
+          type="submit"
           >
             Guardar
         </button>
