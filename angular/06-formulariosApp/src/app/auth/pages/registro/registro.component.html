@@ -76,10 +76,14 @@
                         type="password"
                         class="form-control"
                         placeholder="Password de su cuenta"
+                        formControlName="password"
                     >
-                    <!--<span class="form-text text-danger">
-                        Debe de ser en formato de nombre y apellido
-                    </span>-->
+                    <span 
+                        class="form-text text-danger"
+                        *ngIf="campoNoValido('password')"
+                        >
+                        La contraseña debe de ser mayor de 6 caracteres
+                    </span>
                 </div>
             </div>
             <!--Password2-->
@@ -92,10 +96,14 @@
                         type="password"
                         class="form-control"
                         placeholder="Confirmar la contraseña"
+                        formControlName="password2"
                     >
-                    <!--<span class="form-text text-danger">
-                        Debe de ser en formato de nombre y apellido
-                    </span>-->
+                    <span 
+                        class="form-text text-danger"
+                        *ngIf="campoNoValido('password2')"
+                        >
+                        Las contraseñas deben de ser iguales
+                    </span>
                 </div>
             </div>
 
@@ -113,6 +121,8 @@
 </div>
 
 <h2>Form Valid: {{ miFormulario.valid}}</h2>
+<h2>Form errors</h2>
+<pre>{{miFormulario.errors | json}}</pre>
 
 <h2>Nombre</h2>
 <pre>{{ miFormulario.controls['nombre'].errors | json}}</pre>
@@ -122,3 +132,9 @@
 
 <h2>Username</h2>
 <pre>{{ miFormulario.controls['username'].errors | json}}</pre>
+
+<h2>Password</h2>
+<pre>{{ miFormulario.controls['password'].errors | json}}</pre>
+
+<h2>Confirmar</h2>
+<pre>{{ miFormulario.controls['password2'].errors | json}}</pre>
