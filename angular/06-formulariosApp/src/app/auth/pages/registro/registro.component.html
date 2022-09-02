@@ -41,7 +41,13 @@
                         placeholder="Email del usuario"
                         formControlName="email"
                     >
-                    <span 
+                    <span
+                        class="form-text text-danger"
+                        *ngIf="campoNoValido('email')"
+                        >
+                       {{ emailErrorMSG }}
+                    </span>
+                    <!--<span 
                         class="form-text text-danger"
                         *ngIf="emailRequired()"
                         >
@@ -58,7 +64,7 @@
                         *ngIf="emailTomado()"
                         >
                         El correo ya fue tomado
-                    </span>
+                    </span>-->
                 </div>
             </div>
             <!--Username-->
