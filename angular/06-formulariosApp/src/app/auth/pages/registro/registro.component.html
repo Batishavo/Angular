@@ -59,6 +59,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Nombre código del usuario"
+                        formControlName="username"
                     >
                     <!--<span class="form-text text-danger">
                         Debe de ser en formato de nombre y apellido
@@ -118,3 +119,6 @@
 
 <h2>Email</h2>
 <pre>{{ miFormulario.controls['email'].errors | json}}</pre>
+
+<h2>Username</h2>
+<pre>{{ miFormulario.controls['username'].errors | json}}</pre>
