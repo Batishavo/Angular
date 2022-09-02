@@ -33,9 +33,24 @@ export class RegistroComponent implements OnInit {
     this.miFormulario.reset({
       nombre:'Litos Pro',
       email: 'test1@test.com',
-      username: 'fernando_her85'
+      username: 'fernando_her85',
+      password:'123456',
+      password2:'123456'
     });
 
+  }
+
+  emailRequired(){
+    return this.miFormulario.get('email')?.errors?.['required']
+    && this.miFormulario.get('email')?.touched ;
+  }
+  emailFormato(){
+    return this.miFormulario.get('email')?.errors?.['pattern']
+    && this.miFormulario.get('email')?.touched ;
+  }
+  emailTomado(){
+    return this.miFormulario.get('email')?.errors?.['emailTomado']
+    && this.miFormulario.get('email')?.touched ;
   }
 
   campoNoValido(campo: string){
