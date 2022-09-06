@@ -5,8 +5,9 @@
         +Agregar
     </li>
     <li class="list-group-item "
-        (click)="agregarMarcador()"
         *ngFor="let marcador of marcadores; let i = index"
+        (click)="agregarMarcador(marcador)"
+        (dblclick)="borrarMarcador(i)"
         [ngStyle]="{
             'background-color': marcador.color
         }"
