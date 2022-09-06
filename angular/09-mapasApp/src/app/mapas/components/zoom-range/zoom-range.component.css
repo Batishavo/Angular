@@ -1,0 +1,14 @@
+.mapa-container{
+    height: 100%;
+    width: 100%;
+}
+.row{
+    background-color: white;
+    position: fixed;
+    bottom: 50px;
+    left:50px;
+    padding: 10px;
+    z-index: 999;
+    border-radius: 5px;
+    width: 400px;
+}
