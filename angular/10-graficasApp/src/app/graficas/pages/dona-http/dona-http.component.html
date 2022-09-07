@@ -1,1 +1,20 @@
-<p>dona-http works!</p>
+<h1>Redes sociales mas usuadas</h1>
+<hr>
+<!--<div 
+    
+    class="alert alert-info"
+    >
+    *ngIf="!doughnutChartData else divGrafica"
+    Cargando data...
+</div>-->
+
+<div class="row">
+    <div class="col">
+      <!--<ng-template #divGrafica></ng-template>-->
+      <app-dona-e 
+        [doughnutChartLabels]="label"
+        [valuesNumber]="values"
+        >
+      </app-dona-e>  
+    </div>
+</div>
