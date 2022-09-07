@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "graficasApp": {
+    "10-graficasApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,8 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": ["chart.js"],
-            "outputPath": "dist/graficas-app",
+            "outputPath": "dist/10-graficas-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "graficasApp:build:production"
+              "browserTarget": "10-graficasApp:build:production"
             },
             "development": {
-              "browserTarget": "graficasApp:build:development"
+              "browserTarget": "10-graficasApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "graficasApp:build"
+            "browserTarget": "10-graficasApp:build"
           }
         },
         "test": {
@@ -100,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "33c60ac0-d38f-4a64-af74-469891d8ceeb"
+    "analytics": "53ebe21f-3a81-4692-adcc-b499f54e1df1"
   }
 }
