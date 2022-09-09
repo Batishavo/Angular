@@ -1,4 +1,4 @@
-const { Schema, model } = require('moongoose');
+const { Schema, model } = require('mongoose');
 
 
 const UsuarioSchema = Schema({

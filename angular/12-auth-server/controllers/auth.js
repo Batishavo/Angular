@@ -7,12 +7,27 @@ const crearUsuario=async(req,res = response)=>{
 
     try{
         //Verificar el email
-        let usuario = await Usuario.findOne({email : email});
+        const usuario = await Usuario.findOne({email : email});
+        if(usuario){
+            return res.status(400).json({
+                ok:false,
+                msg: 'El suario ya eciste con ese email'
+            })
+        }
+        //Crear usuario con el
+        const dbUser =  new Usuario(req.body);        
         //Encriptar ka contraseña
-
         //Gerneral JWT
+        
+        //Crea usuario de DB
+        dbUser.save();        
 
         //Gernerar respuesta exitosa
+        return res.status(201).json({
+            ok:true,
+            uid:dbUser.id,
+            name
+        });
 
     }
     catch(error){
