@@ -12,12 +12,14 @@ dbConnection();
 app.use( express.static('public') );
 
 //Cors
-app.use(cors());
+//app.use(cors());
 
 //Lectura y parseo del body
 app.use(express.json());
 
 //Rutas
+app.use(cors());
+
 app.use( '/api/auth', require('./routes/auth'));
 
 app.listen(process.env.PORT ,() => {

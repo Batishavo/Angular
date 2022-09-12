@@ -81,7 +81,8 @@ const loginUsuario=async(req,res = response)=>{
         //Respuesta del servicio
         return res.json({
             ok:true,
-            uid: dbUser.name,
+            uid: dbUser._id,
+            name: dbUser.name,
             token
         });
 
@@ -100,7 +101,7 @@ const loginUsuario=async(req,res = response)=>{
 const revalidarToken = async( req, res = response ) => {
     
     const {uid,name}=req;
-    const token= await generarJWT(uid, name);
+    const token= await generarJWT( name,uid);
     return res.json({
         ok: true,
         uid,
