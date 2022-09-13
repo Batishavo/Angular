@@ -28,10 +28,6 @@ export class AuthService {
       tap(resp =>{
         if(resp.ok){
           localStorage.setItem('token',resp.token!);
-          this._usuario = {
-            name:resp.name!,
-            uid: resp.uid!
-          }
         }
       }),
       map( response => response.ok),
@@ -52,12 +48,34 @@ export class AuthService {
           localStorage.setItem('token',resp.token!);
           this._usuario = {
             name:resp.name!,
-            uid: resp.uid!
+            uid: resp.uid!,
+            correo: resp.email!,
           }
 
           return resp.ok;
         }),
         catchError(err => of(false))
+      )
+    ;
+  }
+
+  logOut(){
+    localStorage.removeItem('token');
+  }
+
+  registro(name:string,email:string,password:string){
+
+    const url = `${this.baseUrl}/auth/new`;
+    const body = {name:name,email:email,password:password};
+    return this.http.post<AuthResponse>(url,body)
+      .pipe(
+        tap(({ok,token}) =>{
+          if(ok){
+            localStorage.setItem('token',token!);
+          }
+        }),
+        map( response => response.ok),
+        catchError(err => of(err.error.msg))
       )
     ;
   }
