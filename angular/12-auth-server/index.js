@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { dbConection, dbConnection } = require('./db/config');
 require('dotenv').config();
 
@@ -10,7 +11,6 @@ const app=express();
 dbConnection();
 //Directorio Público
 app.use( express.static('public') );
-
 //Cors
 //app.use(cors());
 
@@ -22,6 +22,12 @@ app.use(cors());
 
 app.use( '/api/auth', require('./routes/auth'));
 
+//Manejar todas las posibles rutas
+app.get('*',(req , res)=>{
+    res.sendFile( path.resolve(
+        __dirname, 'public/index.html'
+    ))
+} );
 app.listen(process.env.PORT ,() => {
     console.log(`Siuuuuuuuuu Servidor corriendo en puerto ${process.env.PORT}`);
 });
