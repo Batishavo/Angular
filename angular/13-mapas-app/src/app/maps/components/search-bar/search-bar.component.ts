@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
 import { PlacesService } from '../../services/places.service';
 
@@ -8,6 +8,8 @@ import { PlacesService } from '../../services/places.service';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent  {
+
+  @Input() userLocation:[number,number]=[0,0];
 
   private debounceTimer?: NodeJS.Timeout;
 

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef,ViewChild} from '@angular/core';
+import { Component, AfterViewInit, ElementRef,ViewChild, Output} from '@angular/core';
 import {Map, Popup , Marker} from 'mapbox-gl';
 import { MapService, PlacesService } from '../../services';
 
@@ -28,6 +28,7 @@ export class MapViewComponent implements AfterViewInit {
       zoom: 14, // starting zoom
     });
 
+    
     const popup = new Popup()
     .setHTML(`
       <h6>Aquie estoy</h6>
